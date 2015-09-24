@@ -1,2 +1,2 @@
-# Paginate-ORM
+# Paginate ORM
 ORM Pagination library

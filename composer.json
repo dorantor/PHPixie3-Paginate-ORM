@@ -1,0 +1,35 @@
+{
+    "name": "phpixie/paginate-orm",
+    "description": "ORM Pagination library for PHPixie",
+    "keywords": ["paginate", "pagination", "orm"],
+    "homepage": "http://phpixie.com",
+    "type": "library",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Roman Tsiupa",
+            "email": "draconyster@gmail.com",
+            "homepage": "http://dracony.org"
+        }
+    ],
+    "require": {
+        "phpixie/paginate": "3.*@dev",
+        "phpixie/orm": "3.*@dev",
+        "phpixie/database": "3.*@dev",
+        "phpixie/slice": "3.*@dev"
+    },
+    "require-dev": {
+        "phpixie/test": "3.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPixie\\": "src/PHPixie",
+            "PHPixie\\Tests\\": "tests/PHPixie/Tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.x-dev"
+        }
+    }
+}
