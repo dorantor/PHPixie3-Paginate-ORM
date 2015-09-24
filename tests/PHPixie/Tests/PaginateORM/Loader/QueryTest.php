@@ -77,7 +77,7 @@ class QueryTest extends \PHPixie\Test\Testcase
         
         $this->prepareRestoreLimitAndOffset(null, $originalOffset, 3);
         
-        $this->assertSame($loader, $this->repository->getItems(5, $offset));
+        $this->assertSame($loader, $this->repository->getItems($offset, 5));
     }
     
     protected function prepareRestoreLimitAndOffset($limit, $offset, $at = 0)

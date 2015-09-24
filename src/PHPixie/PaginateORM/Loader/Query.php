@@ -22,7 +22,7 @@ class Query implements \PHPixie\Paginate\Loader
         return $this->query->count();
     }
     
-    public function getItems($limit, $offset)
+    public function getItems($offset, $limit)
     {
         if($this->originalOffset === null) {
             $offset+= $this->originalOffset;
