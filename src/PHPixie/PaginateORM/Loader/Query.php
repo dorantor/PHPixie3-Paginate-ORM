@@ -39,8 +39,16 @@ class Query implements \PHPixie\Paginate\Loader
     
     protected function restoreLimitAndOffset()
     {
-        $this->query
-            ->limit($this->originalLimit)
-            ->offset($this->originalOffset);
+        if($this->originalLimit !== null) {
+            $this->query->limit($this->originalLimit);
+        }else{
+            $this->query->clearLimit();
+        }
+        
+        if($this->originalOffset !== null) {
+            $this->query->offset($this->originalOffset);
+        }else{
+            $this->query->clearOffset();
+        }
     }
 }
