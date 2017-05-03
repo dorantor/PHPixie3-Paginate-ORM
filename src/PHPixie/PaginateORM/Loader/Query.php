@@ -6,11 +6,13 @@ class Query implements \PHPixie\Paginate\Loader
 {
     protected $query;
     protected $preload;
+    protected $fields;
     
-    public function __construct($query, $preload = array())
+    public function __construct($query, $preload = array(), $fields = null)
     {
         $this->query   = $query;
         $this->preload = $preload;
+        $this->fields = $fields;
         
         $this->originalLimit  = $query->getLimit();
         $this->originalOffset = $query->getOffset();
@@ -31,7 +33,7 @@ class Query implements \PHPixie\Paginate\Loader
         $items = $this->query
             ->limit($limit)
             ->offset($offset)
-            ->find($this->preload);
+            ->find($this->preload, $this->fields);
         
         $this->restoreLimitAndOffset();
         return $items;
