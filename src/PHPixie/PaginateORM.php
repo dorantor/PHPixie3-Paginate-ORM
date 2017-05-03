@@ -12,14 +12,14 @@ class PaginateORM
         $this->builder = $this->buildBuilder($paginate);
     }
     
-    public function queryLoader($query, $preload = array())
+    public function queryLoader($query, $preload = array(), $fields = null)
     {
-        return $this->builder->queryLoader($query, $preload);
+        return $this->builder->queryLoader($query, $preload, $fields);
     }
     
-    public function queryPager($query, $pageSize, $preload = array())
+    public function queryPager($query, $pageSize, $preload = array(), $fields = null)
     {
-        return $this->builder->queryPager($query, $pageSize, $preload);
+        return $this->builder->queryPager($query, $pageSize, $preload, $fields);
     }
     
     public function builder()
