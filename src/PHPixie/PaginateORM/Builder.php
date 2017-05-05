@@ -11,14 +11,14 @@ class Builder
         $this->paginate = $paginate;
     }
     
-    public function queryLoader($query, $preload = array())
+    public function queryLoader($query, $preload = array(), $fields = null)
     {
-        return new Loader\Query($query, $preload);
+        return new Loader\Query($query, $preload, $fields);
     }
     
-    public function queryPager($query, $pageSize, $preload = array())
+    public function queryPager($query, $pageSize, $preload = array(), $fields = null)
     {
-        $loader = $this->queryLoader($query, $preload);
+        $loader = $this->queryLoader($query, $preload, $fields);
         return $this->paginate->pager($loader, $pageSize);
     }
 }
