@@ -14,7 +14,7 @@
     ],
     "require": {
         "phpixie/paginate": "3.*@dev",
-        "phpixie/orm": "~3.0"
+        "phpixie/orm": "dev-dorantor@dev"
     },
     "require-dev": {
         "phpixie/test": "~3.0"
